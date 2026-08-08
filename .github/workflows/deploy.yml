@@ -16,7 +16,7 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          username: mohammadkaif93
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
       - name: Set up Docker Buildx
@@ -28,5 +28,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKER_HUB_USERNAME }}/portfolio:latest
-            ${{ secrets.DOCKER_HUB_USERNAME }}/portfolio:${{ github.sha }}
+            mohammadkaif93/portfolio:latest
+            mohammadkaif93/portfolio:${{ github.sha }}
