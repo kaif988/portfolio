@@ -1,4 +1,5 @@
 "use client";
+import {useEffect, useState} from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Logo from "./ui/Logo";
 
@@ -15,6 +16,20 @@ const fadeUp = {
 };
 
 export default function Hero() {
+  const [isMobileOS, setIsMobileOS] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Detect mobile OS via userAgent
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const mobileRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+
+    if (mobileRegex.test(userAgent)) {
+      setIsMobileOS(true);
+    }
+    setIsLoaded(true);
+  }, []);
+
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -52,8 +67,16 @@ export default function Hero() {
     mouseY.set(0);
   };
 
+  if (!isLoaded) {
+    return null; // Render nothing until the component is loaded
+  }
+
   return (
-    <section id="hero" className="min-h-screen bg-black relative z-10 flex items-center py-20">
+    <section id="hero" 
+              className={`min-h-screen relative z-10 flex items-center py-20 transition-colors duration-300 ${
+        isMobileOS ? "bg-slate-50 text-slate-900" : "bg-black text-white"
+      }`}
+    >
 
       <div className="max-w-6xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
 
