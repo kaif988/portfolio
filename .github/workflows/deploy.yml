@@ -30,3 +30,7 @@ jobs:
           tags: |
             mohammadkaif93/portfolio:latest
             mohammadkaif93/portfolio:${{ github.sha }}
+
+      - name: Trigger Render Deployment
+        run: |
+          curl -X POST "https://api.render.com/deploy/srv-d9rf0b8n74is73emqsc0?key=edvdNAWy0zI"

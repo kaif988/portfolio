@@ -107,7 +107,7 @@ export default function ContactSection() {
             <div className="space-y-3.5">
               {[
                 { name: "GitHub", href: "https://github.com/kaif988", sub: "github.com/kaif988" },
-                { name: "LinkedIn", href: "https://linkedin.com", sub: "linkedin.com/in/mohammadkaif" },
+                { name: "LinkedIn", href: "https://www.linkedin.com/in/mohammad-kaif-03bb60280", sub: "linkedin.com/in/mohammadkaif" },
                 { name: "Gmail", href: `mailto:${email}`, sub: email },
               ].map((item) => (
                 <a
