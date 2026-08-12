@@ -147,7 +147,7 @@ export default function Hero() {
             </motion.a>
 
             <motion.a
-              href="https://drive.google.com/file/d/1YeF8VozzDOoAysigAnFgDexlKIsmTmRJ/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1twqjxpdZMGzEtgQOAq13TReLeptCgq7H/view?usp=drive_link"
               target="_blank"
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
